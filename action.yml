@@ -1,0 +1,11 @@
+name: 'BCP Validate Branch Action'
+description: 'Validate braches for PR to develop and tags for production deploy'
+inputs:
+  environment:
+    description: 'Environment where will be deploy'
+    required: true
+  rc:
+    description: 'RC to deploy in production. Required when environment is PROD'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
