@@ -21,6 +21,8 @@ try {
 
   if (branchName === Environments.PROD) {
     const rc = core.getInput('rc');
+    if (!rc.startsWith('RC-CERT'))
+      core.setFailed('Required RC branch/tag. This should begin with "RC-CERT..."');
   }
 
 } catch (error) {
